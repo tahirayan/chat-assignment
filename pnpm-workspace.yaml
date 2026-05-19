@@ -1,0 +1,26 @@
+packages:
+  - "apps/*"
+  - "libs/*"
+
+allowBuilds:
+  nx: true
+  "@biomejs/biome": true
+  "@parcel/watcher": true
+  "@swc/core": true
+  better-sqlite3: true
+  bcrypt: true
+  esbuild: true
+  vue-demi: true
+  unrs-resolver: true
+  sharp: true
+
+onlyBuiltDependencies:
+  - nx
+  - "@biomejs/biome"
+  - "@parcel/watcher"
+  - "@swc/core"
+  - better-sqlite3
+  - bcrypt
+  - esbuild
+  - vue-demi
+  - sharp

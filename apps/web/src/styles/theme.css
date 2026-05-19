@@ -1,0 +1,253 @@
+@import "tailwindcss";
+
+/*
+ * Lylia Chat — "Correspondence" design system.
+ *
+ * Direction: a literary, serif-led chat aesthetic. Newsprint paper for
+ * the background, deep warm ink for the type, a single acid-phosphor
+ * green as the only hit colour. No rounded corners larger than the
+ * occasional 2px, no drop shadows except a single page-lift on cards.
+ * Hairline rules between sections (newspaper column rules). Section
+ * labels in tracked-out small caps. Subtle paper grain via SVG noise
+ * overlay applied to <body::before>.
+ *
+ * Type:
+ *   Fraunces      — display serif, dramatic optical sizing (titles)
+ *   Newsreader    — body serif (messages, list copy, paragraphs)
+ *   JetBrains Mono — timestamps, counts, numeric chrome
+ *
+ * Palette (all OKLCH so additions stay in the same hue family):
+ *   paper        — warm cream page background
+ *   ivory        — cleaner ivory surface (cards, panes, message bubbles)
+ *   linen        — slightly warmer alt surface (hover rows, side panes)
+ *   ink          — deep near-black with warm tint (primary text)
+ *   ink-muted    — warm gray (secondary text, timestamps)
+ *   rule         — hairline divider colour
+ *   phosphor     — acid mint-green accent (single hit colour for actions)
+ *   vermilion    — oxblood red (destructive / danger only)
+ *
+ * Naming preserves the existing token shape (`--color-surface`,
+ * `--color-text`, `--color-brand-*`, `--color-success` etc.) so the rest
+ * of the app keeps reading the same Tailwind utilities (`bg-surface`,
+ * `text-text-muted`, `border-border`) — only the *values* change.
+ */
+@theme {
+  /* ─── "Brand" ramp — now the phosphor mint accent ─────────────────── */
+  --color-brand: oklch(0.82 0.21 145);
+  --color-brand-50: oklch(0.97 0.06 145);
+  --color-brand-100: oklch(0.93 0.12 145);
+  --color-brand-200: oklch(0.89 0.17 145);
+  --color-brand-300: oklch(0.85 0.2 145);
+  --color-brand-400: oklch(0.83 0.21 145);
+  --color-brand-500: oklch(0.78 0.21 148);
+  --color-brand-600: oklch(0.62 0.18 150);
+  --color-brand-700: oklch(0.48 0.14 152);
+
+  /* ─── Surfaces (paper / ivory / linen) ───────────────────────────── */
+  --color-surface: oklch(0.96 0.014 85); /* paper — page bg */
+  --color-surface-subtle: oklch(0.985 0.008 85); /* ivory — cards */
+  --color-surface-muted: oklch(0.94 0.018 80); /* linen — alt rows */
+
+  /* ─── Ink (text) ─────────────────────────────────────────────────── */
+  --color-text: oklch(0.18 0.018 40);
+  --color-text-muted: oklch(0.45 0.015 40);
+
+  /* ─── Rule lines ─────────────────────────────────────────────────── */
+  --color-border: oklch(0.84 0.012 60);
+
+  /* ─── Status ─────────────────────────────────────────────────────── */
+  --color-success: oklch(0.7 0.16 145);
+  --color-warning: oklch(0.7 0.15 70);
+  --color-danger: oklch(0.45 0.18 28); /* vermilion / oxblood */
+
+  /* ─── Inverse / accent paper for dark surfaces (call modal) ──────── */
+  --color-white: oklch(0.985 0.008 85);
+
+  /* ─── Type ramp ──────────────────────────────────────────────────── */
+  --font-sans: "Newsreader", "Charter", "Source Serif Pro", Georgia, serif;
+  --font-display: "Fraunces", "Newsreader", Georgia, serif;
+  --font-mono: "JetBrains Mono", "SF Mono", "Menlo", "Consolas", monospace;
+
+  /* ─── Font-size scale ────────────────────────────────────────────
+   * We rely on Tailwind's default text-xs through text-9xl scale. The
+   * one extension is `text-2xs` (10px), used heavily for mono eyebrows
+   * and tracked-out small caps that need to read smaller than xs (12px)
+   * without falling back to arbitrary px values. */
+  --text-2xs: 0.625rem; /* 10px */
+  --text-2xs--line-height: 1.2;
+
+  /* ─── Elevation — one page-lift shadow, used sparingly ───────────── */
+  --shadow-card:
+    0 1px 0 0 oklch(0.84 0.012 60),
+    0 24px 48px -32px oklch(0.18 0.018 40 / 0.18);
+
+  /* ─── Decorative SVG noise grain (data-URI), tuned faint ────────── */
+  --paper-grain: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.13 0 0 0 0 0.11 0 0 0 0 0.08 0 0 0 0.06 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/*
+ * No @layer components. Every reusable surface (Button, Input, Textarea,
+ * Select, Card) lives as a Vue component with its variant classes baked
+ * inline — see `apps/web/src/components/ui/Base*.vue` and `Card.vue`.
+ * Composition uses `cn()` from `lib/cn.ts` (clsx + tailwind-merge).
+ */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-color: var(--color-border);
+    @apply box-border;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    /* Slightly looser leading reads more like book copy. */
+    line-height: 1.55;
+    tab-size: 4;
+    /* Tighter optical kerning everywhere. */
+    text-rendering: optimizeLegibility;
+    -webkit-font-feature-settings:
+      "kern" 1,
+      "liga" 1,
+      "calt" 1;
+  }
+
+  body {
+    position: relative;
+    overflow-x: hidden;
+    /* Newsreader looks best at 16/17 px with slightly tight letterspacing. */
+    font-size: 16px;
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.005em;
+    @apply bg-surface text-text font-sans m-0;
+  }
+
+  /* Paper grain overlay — fixed to viewport so it stays still while
+     scrolling, low opacity so it's only felt, not seen. */
+  body::before {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    content: "";
+    background-image: var(--paper-grain);
+    background-size: 200px 200px;
+    mix-blend-mode: multiply;
+    opacity: 0.5;
+  }
+
+  /* All real content sits above the grain. */
+  #root {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Headings: Fraunces with dramatic optical sizing on the bigger ones. */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    letter-spacing: -0.015em;
+  }
+  h1 {
+    font-variation-settings:
+      "opsz" 110,
+      "SOFT" 30;
+    font-weight: 500;
+  }
+  h2 {
+    font-variation-settings:
+      "opsz" 60,
+      "SOFT" 40;
+    font-weight: 500;
+  }
+  h3,
+  h4 {
+    font-variation-settings:
+      "opsz" 30,
+      "SOFT" 50;
+    font-weight: 600;
+  }
+
+  /* Form controls inherit the brand on focus instead of the default blue. */
+  input:focus,
+  textarea:focus,
+  select:focus,
+  button:focus-visible {
+    outline-color: var(--color-brand-600);
+  }
+
+  /* Selection chip — phosphor highlight, ink text. */
+  ::selection {
+    color: var(--color-text);
+    background: var(--color-brand-500);
+  }
+}
+
+/*
+ * Editorial utility classes — single-purpose decorative tokens that
+ * EVERY component reaches for. These are pure CSS (no @apply) so they
+ * compose with any Tailwind utility without specificity surprises.
+ *
+ *   .eyebrow      tracked-out small caps section label
+ *   .rule         hairline horizontal rule with newspaper feel
+ *   .rule-v       vertical rule (column divider)
+ *   .dropcap      :first-letter floated drop cap (Fraunces)
+ *   .ink-link     dotted-underline link that solidifies on hover
+ *   .phosphor-pill micro pill in phosphor mint, for unread / counts
+ */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.rule {
+  height: 0;
+  margin: 0;
+  border: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.dropcap::first-letter {
+  float: left;
+  margin: 0.05em 0.08em 0 -0.04em;
+  font-family: var(--font-display);
+  font-size: 3.4em;
+  font-variation-settings:
+    "opsz" 144,
+    "SOFT" 0;
+  font-weight: 600;
+  line-height: 0.85;
+  color: var(--color-text);
+}
+
+.ink-link {
+  text-decoration: underline dotted;
+  text-decoration-color: var(--color-text-muted);
+  text-underline-offset: 4px;
+  transition: text-decoration-color 160ms ease;
+}
+.ink-link:hover {
+  text-decoration: underline solid;
+  text-decoration-color: var(--color-text);
+}
+
+.phosphor-pill {
+  padding: 1px 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+  background: var(--color-brand-500);
+  border-radius: 2px;
+}

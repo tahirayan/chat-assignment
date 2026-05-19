@@ -1,0 +1,199 @@
+{
+  "app": {
+    "name": "Lylia Chat",
+    "tagline": "Gerçek zamanlı sohbet"
+  },
+  "common": {
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "loading": "Yükleniyor…",
+    "retry": "Tekrar dene",
+    "back": "Geri",
+    "close": "Kapat",
+    "search": "Ara",
+    "dismiss": "Kapat"
+  },
+  "presence": {
+    "online": "çevrimiçi",
+    "offline": "çevrimdışı"
+  },
+  "nav": {
+    "chats": "Sohbetler",
+    "community": "Topluluk",
+    "profile": "Profil"
+  },
+  "auth": {
+    "title": "Hoş geldin",
+    "subtitleLogin": "Devam etmek için giriş yap",
+    "subtitleRegister": "Hesabını oluştur",
+    "loginTab": "Giriş yap",
+    "registerTab": "Kayıt ol",
+    "displayName": "Görünen ad",
+    "displayNamePlaceholder": "Ayşe",
+    "email": "E-posta",
+    "emailPlaceholder": "E-posta adresi",
+    "password": "Şifre",
+    "passwordHint": "En az 8 karakter",
+    "submitLogin": "Giriş yap",
+    "submitRegister": "Hesap oluştur",
+    "switchToRegister": "Hesabın yok mu? Kayıt ol",
+    "switchToLogin": "Hesabın var mı? Giriş yap",
+    "errors": {
+      "invalidCredentials": "E-posta veya şifre hatalı",
+      "emailTaken": "Bu e-posta ile bir hesap zaten var",
+      "generic": "Bir şeyler ters gitti. Lütfen tekrar deneyin."
+    }
+  },
+  "chats": {
+    "title": "Sohbetler",
+    "onlineNow": "Şu anda çevrimiçi",
+    "searchPlaceholder": "Sohbetlerde ara",
+    "youPrefix": "Sen:",
+    "empty": {
+      "title": "Henüz sohbet yok",
+      "cta": "Sohbet edecek birini bul"
+    },
+    "emptyFiltered": "\"{query}\" ile eşleşen sohbet yok",
+    "rightPane": {
+      "empty": "Sohbete başlamak için bir konuşma seç"
+    }
+  },
+  "community": {
+    "title": "Topluluk",
+    "searchPlaceholder": "İsme göre ara",
+    "sections": {
+      "online": "Şu anda çevrimiçi",
+      "all": "Tüm kullanıcılar",
+      "offline": "Çevrimdışı"
+    },
+    "empty": "Buradaki tek kişi sensin. Birini davet et!",
+    "emptyFiltered": "\"{query}\" ile eşleşen kullanıcı yok",
+    "lastSeen": "son görülme {time}",
+    "lastSeenUnknown": "çevrimdışı"
+  },
+  "chat": {
+    "compose": {
+      "placeholder": "Bir mesaj yaz",
+      "send": "Gönder"
+    },
+    "typing": "{name} yazıyor…",
+    "typingAnon": "yazıyor…",
+    "loadMore": "Daha fazla yükle",
+    "today": "Bugün",
+    "yesterday": "Dün",
+    "sent": "Gönderildi",
+    "read": "Okundu",
+    "emptySayHi": "Selam ver",
+    "callAudio": "Sesli arama",
+    "callVideo": "Görüntülü arama",
+    "callComingSoon": "Yakında"
+  },
+  "profile": {
+    "title": "Profil",
+    "sections": {
+      "account": "Hesap",
+      "preferences": "Tercihler"
+    },
+    "displayName": "Görünen ad",
+    "displayNameHint": "2–50 karakter",
+    "bio": "Hakkımda",
+    "bioPlaceholder": "Kendinden bahset",
+    "bioHint": "En fazla 280 karakter",
+    "locale": "Dil",
+    "upgradeCta": "Pro'ya yükselt",
+    "proBadge": "Pro",
+    "logout": "Çıkış yap",
+    "logoutConfirm": "Bu cihazdan çıkış yapmak istiyor musun?",
+    "saveSuccess": "Profil kaydedildi",
+    "saveError": "Profil kaydedilemedi — lütfen tekrar deneyin",
+    "unsaved": "Kaydedilmemiş değişiklikler"
+  },
+  "avatar": {
+    "uploadLabel": "Fotoğrafı değiştir",
+    "removeLabel": "Fotoğrafı kaldır",
+    "errors": {
+      "fileTooLarge": "Görsel çok büyük (en fazla 10MB)",
+      "unsupportedFormat": "Lütfen JPEG, PNG veya WebP kullan",
+      "decodeFailed": "Bu görsel okunamadı. Başka bir tane dene.",
+      "resultTooLarge": "Görsel sıkıştırılamayacak kadar karmaşık. Daha sade bir fotoğraf dene."
+    }
+  },
+  "languages": {
+    "en": "English",
+    "tr": "Türkçe",
+    "et": "Eesti"
+  },
+  "states": {
+    "loading": "Yükleniyor…",
+    "empty": "Burada bir şey yok",
+    "error": "Bir şeyler ters gitti"
+  },
+  "call": {
+    "audio": "Sesli arama",
+    "video": "Görüntülü arama",
+    "calling": "Aranıyor…",
+    "ringing": "Gelen arama",
+    "connecting": "Bağlanıyor…",
+    "connected": "Bağlandı",
+    "ended": "Arama sona erdi",
+    "endedReason": {
+      "hangup": "Arama sona erdi",
+      "rejected": "Arama reddedildi",
+      "timeout": "Cevap yok",
+      "failed": "Bağlantı başarısız",
+      "busy": "Kullanıcı meşgul"
+    },
+    "answer": "Cevapla",
+    "decline": "Reddet",
+    "end": "Aramayı bitir",
+    "mute": "Sustur",
+    "unmute": "Susturmayı kaldır",
+    "cameraOn": "Kamerayı aç",
+    "cameraOff": "Kamerayı kapat",
+    "calleeOffline": "Kullanıcı çevrimdışı",
+    "permissionDenied": "Mikrofon erişimi reddedildi",
+    "permissionDeniedVideo": "Kamera erişimi reddedildi",
+    "incomingFrom": "{name} arıyor"
+  },
+  "upgrade": {
+    "title": "Chat Pro",
+    "blurb": "Projeyi destekle ve Pro rozetini kazan.",
+    "price": "€4.99",
+    "priceCaption": "tek seferlik ödeme",
+    "submit": "€4.99 öde",
+    "submitting": "İşleniyor…",
+    "notConfigured": "Ödemeler bu ortamda yapılandırılmamış.",
+    "loadError": "Ödeme formu yüklenemedi. Lütfen tekrar dene.",
+    "success": "Pro'ya hoş geldin!",
+    "failed": "Ödeme tamamlanamadı. Hesabınızdan ücret alınmadı.",
+    "processing": "Ödeme işleniyor — onaylandığında hesabını güncelleyeceğiz.",
+    "requiresAction": "Ek doğrulama gerekiyor. Lütfen tekrar dene."
+  },
+  "notifications": {
+    "title": "Cevapsız aramalar",
+    "empty": "Cevapsız arama yok.",
+    "markAllRead": "Tümünü okundu işaretle",
+    "open": "Bildirimleri aç",
+    "newMessage": "{name} kişisinden yeni mesaj",
+    "missedCall": "{name} kişisinden cevapsız arama",
+    "incomingCall": "{name} arıyor",
+    "settings": "Bildirimler",
+    "enable": "Tarayıcı bildirimleri",
+    "enableHint": "Sekme arka plandayken sistem bildirimi al.",
+    "soundEnable": "Bildirim sesi",
+    "soundHint": "Yeni etkinlikte kısa bir ses çal.",
+    "permissionTitle": "Bildirimlere izin verilsin mi?",
+    "permissionBody": "Yalnızca bu sekme arka plandayken yeni mesajlar ve gelen aramalar için bildirim göndereceğiz.",
+    "permissionGrant": "İzin ver",
+    "permissionDeny": "Şimdi değil",
+    "permissionBlocked": "Bildirimler tarayıcı ayarlarında engellenmiş.",
+    "unsupported": "Tarayıcın bildirimleri desteklemiyor."
+  },
+  "install": {
+    "title": "Chat'i yükle",
+    "subtitleAndroid": "Tam ekran deneyim için ana ekrana ekle",
+    "subtitleIos": "Paylaş düğmesine dokun, sonra “Ana Ekrana Ekle”yi seç",
+    "install": "Yükle",
+    "notNow": "Şimdi değil"
+  }
+}

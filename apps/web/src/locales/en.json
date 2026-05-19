@@ -1,0 +1,199 @@
+{
+  "app": {
+    "name": "Lylia Chat",
+    "tagline": "Real-time chat"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "loading": "Loading…",
+    "retry": "Retry",
+    "back": "Back",
+    "close": "Close",
+    "search": "Search",
+    "dismiss": "Dismiss"
+  },
+  "presence": {
+    "online": "online",
+    "offline": "offline"
+  },
+  "nav": {
+    "chats": "Chats",
+    "community": "Community",
+    "profile": "Profile"
+  },
+  "auth": {
+    "title": "Welcome",
+    "subtitleLogin": "Log in to continue",
+    "subtitleRegister": "Create your account",
+    "loginTab": "Log in",
+    "registerTab": "Sign up",
+    "displayName": "Display name",
+    "displayNamePlaceholder": "Alice",
+    "email": "Email",
+    "emailPlaceholder": "Email address",
+    "password": "Password",
+    "passwordHint": "At least 8 characters",
+    "submitLogin": "Log in",
+    "submitRegister": "Create account",
+    "switchToRegister": "Need an account? Sign up",
+    "switchToLogin": "Already have an account? Log in",
+    "errors": {
+      "invalidCredentials": "Email or password incorrect",
+      "emailTaken": "An account with this email already exists",
+      "generic": "Something went wrong. Please try again."
+    }
+  },
+  "chats": {
+    "title": "Chats",
+    "onlineNow": "Online now",
+    "searchPlaceholder": "Search conversations",
+    "youPrefix": "You:",
+    "empty": {
+      "title": "No conversations yet",
+      "cta": "Find someone to chat with"
+    },
+    "emptyFiltered": "No conversations match \"{query}\"",
+    "rightPane": {
+      "empty": "Select a conversation to start messaging"
+    }
+  },
+  "community": {
+    "title": "Community",
+    "searchPlaceholder": "Search by name",
+    "sections": {
+      "online": "Online now",
+      "all": "All users",
+      "offline": "Offline"
+    },
+    "empty": "You're the only one here. Invite someone!",
+    "emptyFiltered": "No users match \"{query}\"",
+    "lastSeen": "last seen {time}",
+    "lastSeenUnknown": "offline"
+  },
+  "chat": {
+    "compose": {
+      "placeholder": "Type a message",
+      "send": "Send"
+    },
+    "typing": "{name} is typing…",
+    "typingAnon": "typing…",
+    "loadMore": "Load more",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "sent": "Sent",
+    "read": "Read",
+    "emptySayHi": "Say hi",
+    "callAudio": "Audio call",
+    "callVideo": "Video call",
+    "callComingSoon": "Coming soon"
+  },
+  "profile": {
+    "title": "Profile",
+    "sections": {
+      "account": "Account",
+      "preferences": "Preferences"
+    },
+    "displayName": "Display name",
+    "displayNameHint": "2–50 characters",
+    "bio": "Bio",
+    "bioPlaceholder": "Tell people about yourself",
+    "bioHint": "Up to 280 characters",
+    "locale": "Language",
+    "upgradeCta": "Upgrade to Pro",
+    "proBadge": "Pro",
+    "logout": "Log out",
+    "logoutConfirm": "Sign out of this device?",
+    "saveSuccess": "Profile saved",
+    "saveError": "Couldn't save profile — please try again",
+    "unsaved": "Unsaved changes"
+  },
+  "avatar": {
+    "uploadLabel": "Change photo",
+    "removeLabel": "Remove photo",
+    "errors": {
+      "fileTooLarge": "Image is too large (max 10MB)",
+      "unsupportedFormat": "Please use JPEG, PNG, or WebP",
+      "decodeFailed": "Couldn't read that image. Try another?",
+      "resultTooLarge": "Image is too complex to compress. Try a simpler photo."
+    }
+  },
+  "languages": {
+    "en": "English",
+    "tr": "Türkçe",
+    "et": "Eesti"
+  },
+  "states": {
+    "loading": "Loading…",
+    "empty": "Nothing here",
+    "error": "Something went wrong"
+  },
+  "call": {
+    "audio": "Audio call",
+    "video": "Video call",
+    "calling": "Calling…",
+    "ringing": "Incoming call",
+    "connecting": "Connecting…",
+    "connected": "Connected",
+    "ended": "Call ended",
+    "endedReason": {
+      "hangup": "Call ended",
+      "rejected": "Call declined",
+      "timeout": "No answer",
+      "failed": "Connection failed",
+      "busy": "User is busy"
+    },
+    "answer": "Answer",
+    "decline": "Decline",
+    "end": "End call",
+    "mute": "Mute",
+    "unmute": "Unmute",
+    "cameraOn": "Turn camera on",
+    "cameraOff": "Turn camera off",
+    "calleeOffline": "User is offline",
+    "permissionDenied": "Microphone access denied",
+    "permissionDeniedVideo": "Camera access denied",
+    "incomingFrom": "Incoming call from {name}"
+  },
+  "upgrade": {
+    "title": "Chat Pro",
+    "blurb": "Support the project and unlock the Pro badge.",
+    "price": "€4.99",
+    "priceCaption": "one-time charge",
+    "submit": "Pay €4.99",
+    "submitting": "Processing…",
+    "notConfigured": "Payments are not configured in this environment.",
+    "loadError": "Couldn't load the payment form. Please try again.",
+    "success": "Welcome to Pro!",
+    "failed": "Payment didn't go through. No charge was made.",
+    "processing": "Your payment is processing — we'll update your account once it clears.",
+    "requiresAction": "Additional verification is needed. Please retry."
+  },
+  "notifications": {
+    "title": "Missed calls",
+    "empty": "No missed calls.",
+    "markAllRead": "Mark all as read",
+    "open": "Open notifications",
+    "newMessage": "New message from {name}",
+    "missedCall": "Missed call from {name}",
+    "incomingCall": "{name} is calling",
+    "settings": "Notifications",
+    "enable": "Browser notifications",
+    "enableHint": "Get a system notification when the tab is in the background.",
+    "soundEnable": "Notification sound",
+    "soundHint": "Play a short chime when a new event arrives.",
+    "permissionTitle": "Allow notifications?",
+    "permissionBody": "We'll only notify you about new messages and incoming calls when this tab is in the background.",
+    "permissionGrant": "Allow",
+    "permissionDeny": "Not now",
+    "permissionBlocked": "Notifications are blocked in your browser settings.",
+    "unsupported": "Your browser doesn't support notifications."
+  },
+  "install": {
+    "title": "Install Chat",
+    "subtitleAndroid": "Add to your home screen for a full-screen experience",
+    "subtitleIos": "Tap the Share button, then choose “Add to Home Screen”",
+    "install": "Install",
+    "notNow": "Not now"
+  }
+}

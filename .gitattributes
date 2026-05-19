@@ -1,0 +1,26 @@
+# Force LF line endings for env files — Stripe webhook signature
+# verification fails if Node's --env-file loader preserves a trailing CR.
+.env text eol=lf
+.env.* text eol=lf
+.env.example text eol=lf
+
+# Source files should also be LF; matches what Biome and most editors expect.
+*.ts text eol=lf
+*.tsx text eol=lf
+*.vue text eol=lf
+*.js text eol=lf
+*.mjs text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+
+# Binary asset hint so PNGs and icons aren't munged by git.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary
+*.db binary

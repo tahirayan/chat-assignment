@@ -1,0 +1,62 @@
+# Netlify deploy config for the web app (PRD §17.1).
+#
+# Before pushing this to a Netlify site, replace `<your-railway-domain>`
+# below with the actual Railway service URL. The api lives on Railway;
+# Netlify is just a static host + reverse-proxy front so cookies stay
+# first-party (SameSite=Lax suffices via this rewrite).
+
+[build]
+  base    = "."
+  command = "pnpm install --frozen-lockfile && pnpm exec nx build web --skip-nx-cache"
+  publish = "dist/apps/web"
+
+[build.environment]
+  NODE_VERSION = "22"
+  PNPM_VERSION = "9"
+
+# ─── REST proxy ──────────────────────────────────────────────────────────
+# All /api/* hits go to Railway. status=200 (rewrite, not redirect) so the
+# browser sees same-origin and the refresh-cookie path /api/auth stays
+# first-party. `force = true` overrides any conflicting static rule.
+[[redirects]]
+  from   = "/api/*"
+  to     = "https://lylia-chat-production.up.railway.app/api/:splat"
+  status = 200
+  force  = true
+
+# ─── Socket.io tunnel ────────────────────────────────────────────────────
+# Same-origin rewrite for the long-poll / websocket handshake. Netlify
+# transparently upgrades HTTP rewrites to WS when the client requests it.
+[[redirects]]
+  from   = "/socket.io/*"
+  to     = "https://lylia-chat-production.up.railway.app/socket.io/:splat"
+  status = 200
+  force  = true
+
+# ─── SPA fallback (MUST be last) ─────────────────────────────────────────
+# Every non-asset, non-API path renders index.html so the Vue router can
+# handle deep links like /chat/<uuid> after a hard refresh.
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
+
+# ─── Headers ─────────────────────────────────────────────────────────────
+# Workbox + manifest must not be edge-cached aggressively — clients pick
+# up new service workers via the registerSW.js entry, which itself is
+# revisioned. Cache-busting hashed JS/CSS gets a long-cache header for
+# free since file names change per build.
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/registerSW.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/manifest.webmanifest"
+  [headers.values]
+    Cache-Control = "no-cache"

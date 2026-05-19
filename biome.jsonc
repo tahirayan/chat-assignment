@@ -1,0 +1,130 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": [
+    "ultracite/biome/core",
+    "ultracite/biome/vue",
+    "ultracite/biome/vitest"
+  ],
+  "files": {
+    "includes": [
+      "!**/dist",
+      "!**/.nx",
+      "!**/node_modules",
+      "!**/coverage",
+      "!**/.nx-graph.json",
+      "!apps/api/src/db/migrations",
+      "!pnpm-lock.yaml",
+      "!skills-lock.json",
+      "!.claude/skills/ultracite"
+    ]
+  },
+  "overrides": [
+    // Barrel files at lib entry points are a deliberate DX choice — apps
+    // import via `@chat/shared-types` rather than deep paths. Allow them.
+    {
+      "includes": ["libs/*/src/index.ts"],
+      "linter": {
+        "rules": {
+          "performance": {
+            "noBarrelFile": "off",
+            "noReExportAll": "off"
+          }
+        }
+      }
+    },
+    // Test files: inline regex literals are fine (one-off assertions, not hot paths).
+    {
+      "includes": ["**/*.spec.ts", "**/*.test.ts"],
+      "linter": {
+        "rules": {
+          "performance": {
+            "useTopLevelRegex": "off"
+          }
+        }
+      }
+    },
+    // Vue convention: components, views, and their colocated spec files use
+    // PascalCase filenames; composables use camelCase `useX.ts`.
+    {
+      "includes": [
+        "apps/web/**/*.vue",
+        "apps/web/**/*.spec.ts",
+        "apps/web/src/composables/**/*.ts"
+      ],
+      "linter": {
+        "rules": {
+          "style": {
+            "useFilenamingConvention": "off"
+          }
+        }
+      }
+    },
+    // Vue scoped slots declare variables via `<template #default="props">` —
+    // Biome's parser doesn't see them. vue-tsc still catches truly undeclared
+    // usage during typecheck.
+    {
+      "includes": ["apps/web/**/*.vue"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUndeclaredVariables": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["apps/web/**"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noRestrictedImports": {
+              "level": "error",
+              "options": {
+                "paths": {
+                  "@chat/api": "apps/web cannot import from apps/api — use @chat/shared-* contracts.",
+                  "../../../apps/api": "apps/web cannot import from apps/api — use @chat/shared-* contracts."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "includes": ["apps/api/**"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noRestrictedImports": {
+              "level": "error",
+              "options": {
+                "paths": {
+                  "@chat/web": "apps/api cannot import from apps/web — use @chat/shared-* contracts.",
+                  "../../../apps/web": "apps/api cannot import from apps/web — use @chat/shared-* contracts."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "includes": ["libs/shared-types/**"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noRestrictedImports": {
+              "level": "error",
+              "options": {
+                "paths": {
+                  "zod": "shared-types must have zero runtime dependencies — Zod schemas belong in shared-contracts.",
+                  "@chat/shared-contracts": "shared-types cannot depend on shared-contracts (reversed dependency)."
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

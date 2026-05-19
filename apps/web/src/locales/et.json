@@ -1,0 +1,199 @@
+{
+  "app": {
+    "name": "Lylia Chat",
+    "tagline": "Reaalajas vestlus"
+  },
+  "common": {
+    "save": "Salvesta",
+    "cancel": "Tühista",
+    "loading": "Laadimine…",
+    "retry": "Proovi uuesti",
+    "back": "Tagasi",
+    "close": "Sulge",
+    "search": "Otsi",
+    "dismiss": "Sulge"
+  },
+  "presence": {
+    "online": "võrgus",
+    "offline": "võrgust väljas"
+  },
+  "nav": {
+    "chats": "Vestlused",
+    "community": "Kogukond",
+    "profile": "Profiil"
+  },
+  "auth": {
+    "title": "Tere tulemast",
+    "subtitleLogin": "Logi sisse, et jätkata",
+    "subtitleRegister": "Loo oma konto",
+    "loginTab": "Logi sisse",
+    "registerTab": "Registreeru",
+    "displayName": "Kuvatav nimi",
+    "displayNamePlaceholder": "Maria",
+    "email": "E-post",
+    "emailPlaceholder": "E-posti aadress",
+    "password": "Parool",
+    "passwordHint": "Vähemalt 8 tähemärki",
+    "submitLogin": "Logi sisse",
+    "submitRegister": "Loo konto",
+    "switchToRegister": "Pole kontot? Registreeru",
+    "switchToLogin": "On juba konto? Logi sisse",
+    "errors": {
+      "invalidCredentials": "E-post või parool on vale",
+      "emailTaken": "Selle e-postiga konto on juba olemas",
+      "generic": "Midagi läks valesti. Palun proovi uuesti."
+    }
+  },
+  "chats": {
+    "title": "Vestlused",
+    "onlineNow": "Praegu võrgus",
+    "searchPlaceholder": "Otsi vestlustest",
+    "youPrefix": "Sina:",
+    "empty": {
+      "title": "Vestlusi veel pole",
+      "cta": "Leia kellegagi vestlema"
+    },
+    "emptyFiltered": "Ühtegi vestlust ei vasta otsingule \"{query}\"",
+    "rightPane": {
+      "empty": "Vali vestlus, et alustada sõnumite saatmist"
+    }
+  },
+  "community": {
+    "title": "Kogukond",
+    "searchPlaceholder": "Otsi nime järgi",
+    "sections": {
+      "online": "Praegu võrgus",
+      "all": "Kõik kasutajad",
+      "offline": "Võrgust väljas"
+    },
+    "empty": "Sa oled siin ainus. Kutsu keegi liituma!",
+    "emptyFiltered": "Otsingule \"{query}\" vastavaid kasutajaid pole",
+    "lastSeen": "viimati nähtud {time}",
+    "lastSeenUnknown": "võrgust väljas"
+  },
+  "chat": {
+    "compose": {
+      "placeholder": "Kirjuta sõnum",
+      "send": "Saada"
+    },
+    "typing": "{name} kirjutab…",
+    "typingAnon": "kirjutab…",
+    "loadMore": "Lae rohkem",
+    "today": "Täna",
+    "yesterday": "Eile",
+    "sent": "Saadetud",
+    "read": "Loetud",
+    "emptySayHi": "Ütle tere",
+    "callAudio": "Helikõne",
+    "callVideo": "Videokõne",
+    "callComingSoon": "Peagi tulemas"
+  },
+  "profile": {
+    "title": "Profiil",
+    "sections": {
+      "account": "Konto",
+      "preferences": "Eelistused"
+    },
+    "displayName": "Kuvatav nimi",
+    "displayNameHint": "2–50 tähemärki",
+    "bio": "Tutvustus",
+    "bioPlaceholder": "Räägi endast",
+    "bioHint": "Kuni 280 tähemärki",
+    "locale": "Keel",
+    "upgradeCta": "Uuenda Pro-le",
+    "proBadge": "Pro",
+    "logout": "Logi välja",
+    "logoutConfirm": "Kas logida sellelt seadmelt välja?",
+    "saveSuccess": "Profiil salvestatud",
+    "saveError": "Profiili ei õnnestunud salvestada — palun proovi uuesti",
+    "unsaved": "Salvestamata muudatused"
+  },
+  "avatar": {
+    "uploadLabel": "Vaheta pilti",
+    "removeLabel": "Eemalda pilt",
+    "errors": {
+      "fileTooLarge": "Pilt on liiga suur (kuni 10MB)",
+      "unsupportedFormat": "Palun kasuta JPEG, PNG või WebP vormingut",
+      "decodeFailed": "Seda pilti ei õnnestunud lugeda. Proovi mõnda teist?",
+      "resultTooLarge": "Pilt on tihendamiseks liiga keeruline. Proovi lihtsamat fotot."
+    }
+  },
+  "languages": {
+    "en": "English",
+    "tr": "Türkçe",
+    "et": "Eesti"
+  },
+  "states": {
+    "loading": "Laadimine…",
+    "empty": "Siin pole midagi",
+    "error": "Midagi läks valesti"
+  },
+  "call": {
+    "audio": "Helikõne",
+    "video": "Videokõne",
+    "calling": "Helistamine…",
+    "ringing": "Sissetulev kõne",
+    "connecting": "Ühendamine…",
+    "connected": "Ühendatud",
+    "ended": "Kõne lõpetatud",
+    "endedReason": {
+      "hangup": "Kõne lõpetatud",
+      "rejected": "Kõne tagasi lükatud",
+      "timeout": "Vastust pole",
+      "failed": "Ühendus ebaõnnestus",
+      "busy": "Kasutaja on hõivatud"
+    },
+    "answer": "Vasta",
+    "decline": "Lükka tagasi",
+    "end": "Lõpeta kõne",
+    "mute": "Vaigista",
+    "unmute": "Eemalda vaigistus",
+    "cameraOn": "Lülita kaamera sisse",
+    "cameraOff": "Lülita kaamera välja",
+    "calleeOffline": "Kasutaja on võrgust väljas",
+    "permissionDenied": "Mikrofoni juurdepääs keelatud",
+    "permissionDeniedVideo": "Kaamera juurdepääs keelatud",
+    "incomingFrom": "{name} helistab"
+  },
+  "upgrade": {
+    "title": "Chat Pro",
+    "blurb": "Toeta projekti ja saa Pro märk.",
+    "price": "€4.99",
+    "priceCaption": "ühekordne tasu",
+    "submit": "Maksa €4.99",
+    "submitting": "Töötlemine…",
+    "notConfigured": "Maksed pole selles keskkonnas seadistatud.",
+    "loadError": "Maksevormi ei õnnestunud laadida. Palun proovi uuesti.",
+    "success": "Tere tulemast Pro-sse!",
+    "failed": "Makse ebaõnnestus. Sinult tasu maha ei võetud.",
+    "processing": "Sinu makse on töötlemisel — uuendame konto, kui see õnnestub.",
+    "requiresAction": "Vajalik on täiendav kinnitus. Palun proovi uuesti."
+  },
+  "notifications": {
+    "title": "Vastamata kõned",
+    "empty": "Vastamata kõnesid pole.",
+    "markAllRead": "Märgi kõik loetuks",
+    "open": "Ava teavitused",
+    "newMessage": "Uus sõnum kasutajalt {name}",
+    "missedCall": "Vastamata kõne kasutajalt {name}",
+    "incomingCall": "{name} helistab",
+    "settings": "Teavitused",
+    "enable": "Brauseri teavitused",
+    "enableHint": "Saa süsteemi teavitus, kui vahekaart on taustal.",
+    "soundEnable": "Teavituse heli",
+    "soundHint": "Mängi uue sündmuse saabudes lühike heli.",
+    "permissionTitle": "Kas lubada teavitused?",
+    "permissionBody": "Teavitame ainult uutest sõnumitest ja sissetulevatest kõnedest, kui see vahekaart on taustal.",
+    "permissionGrant": "Luba",
+    "permissionDeny": "Mitte praegu",
+    "permissionBlocked": "Teavitused on brauseri seadetes blokeeritud.",
+    "unsupported": "Sinu brauser ei toeta teavitusi."
+  },
+  "install": {
+    "title": "Paigalda Chat",
+    "subtitleAndroid": "Lisa avalehele täisekraani kogemuse jaoks",
+    "subtitleIos": "Puuduta Jaga nuppu ja vali “Lisa avalehele”",
+    "install": "Paigalda",
+    "notNow": "Mitte praegu"
+  }
+}
