@@ -6,7 +6,7 @@ WebRTC, Stripe-gated Pro upgrade, and PWA install on Android + iOS. Three
 languages, mobile-first, installs to the home screen, audio/video media
 never touches the server.
 
-- **Live demo:** _(pending Railway/Netlify deploy)_ <!-- TODO insert URL -->
+- **Live demo:** https://lylia-chat.netlify.app
 - **Engineering report:** [REPORT.md](./REPORT.md) — architecture, key decisions, what I'd build next.
 - **Full requirements:** [PRD.md](./PRD.md). **Build sequence:** [PLAN.md](./PLAN.md).
 
@@ -48,8 +48,7 @@ _(5 screenshots will be added once the production deploy is up: auth, chats, cha
 
 Nx 22 monorepo · pnpm. Vue 3.5 + Vite 7 + Pinia 3 + Tailwind 4 · Fastify 5
 + Socket.io 4.8 · Drizzle ORM + SQLite (WAL) · JWT (jose) + bcrypt cost 12
-· Stripe Payment Element · Vitest · Ultracite (Biome 2) — no ESLint, no
-Prettier. Three locales via vue-i18n 11 composition mode.
+· Stripe Payment Element · Vitest · Ultracite (Biome 2) . Three locales via vue-i18n 11 composition mode.
 
 Full breakdown: [REPORT.md §7](./REPORT.md#7-tech-stack-at-a-glance).
 
